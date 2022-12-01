@@ -4,7 +4,7 @@ A plugin to facilitate the moderation of your server that allows you to ban, unb
 - - - -
 ## Compatibility 
 This plugin is meant to be used on servers made only in the software **[PocketMine-MP](https://github.com/pmmp/PocketMine-MP)**, it may not work perfectly in variants of it.
-
+- - - -
 ## Commands:
  **Punish:**
 - /punish [args...]
@@ -17,13 +17,13 @@ This plugin is meant to be used on servers made only in the software **[PocketMi
  **Spy:**
 - /spy [args...] 
 
-## Usage commands:
+ **Usage commands:**
 - punish: /punish [player] [reason]
 - absolve: /absolve [player]
 - mute: /mute [player] [reason] [time]
 - unmute: /unmute [player]
 - spy: /spy [value]
-
+- - - -
 ## EasyModeration API
 ```php 
 use ImperaZim\EasyModeration\Functions\Punishment\Punishment as API;
