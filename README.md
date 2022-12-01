@@ -27,6 +27,6 @@ This plugin is meant to be used on servers made only in the software **[PocketMi
 ## EasyModeration API
 ```php 
 use ImperaZim\EasyModeration\Functions\Punishment\Punishment as API;
-API::isMuted(String $username); // example return true
-API::isBanned(String $username); // example return true
+API::isMuted(String $username); // true
+API::isBanned(String $username); // true
 ```
