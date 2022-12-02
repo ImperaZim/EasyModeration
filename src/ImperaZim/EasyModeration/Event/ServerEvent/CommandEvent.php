@@ -3,7 +3,7 @@
 namespace ImperaZim\EasyModeration\Event\ServerEvent;
 
 use pocketmine\Server;
-use pocketmine\player\player;
+use pocketmine\player\Player;
 use pocketmine\event\Listener;
 use ImperaZim\EasyModeration\Loader;
 use pocketmine\event\server\CommandEvent as UsageEvent;
