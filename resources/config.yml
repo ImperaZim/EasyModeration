@@ -1,0 +1,28 @@
+
+#------------------------------
+prefix: "§l§cMODERATION§r" 
+#------------------------------
+
+messages:
+ error: "{prefix} §7Error!!!"
+ no-permission: "{perfix} §7You are not allowed to do this!"
+ muted:
+  alert: "{prefix} §7You have been silenced!"
+  notice: "{prefix} §7you were silenced! \n §7Reason: §e{mute.reason} \n §7Duration: §e{mute.duration}"
+  is-muted: "{prefix} §7The player §c{mute.player} §7is already silenced!"
+  to-sender: "{prefix} §7The player §c{mute.player} §7has been successfully muted!"
+  offline: "{prefix} §7The player §c{mute.player} §7is not online!"
+  absolve: 
+   notice: "true:{prefix} §7Your punishment time is over! Respect the rules to not receive a worse punishment!"
+   to-sender: "{prefix} §7The player §c{absolve.player} §7has been successfully unmuted!"
+   no-muted: "{prefix} §7The player §c{absolve.player} §7is not muted!"
+ banned:
+  notice: "true:{prefix} §7The player §c{ban.player} §7has been banned for §c\"{ban.reason}\"§7 for the duration of §c{ban.duration}§7!"
+  is-banned: "{prefix} §7The player §c{ban.player} §7is already banned!"
+  to-banned: "{prefix} \n§cYou are banned! \n§l§fAt: §r§e{ban.date}\n§l§fDuration: §r§e{ban.duration} \n§l§fReason: §r§e{ban.reason} \n§l§fBanned by: §r§a{ban.author}"
+  absolve: 
+   notice: "true:{prefix} §7Your punishment time is over! Respect the rules to not receive a worse punishment!"
+   to-sender: "{prefix} §7The player §c{absolve.player} §7has been successfully unbanned!"
+   no-banned: "{prefix} §7The player §c{absolve.player} §7is not banned!"
+ logger:
+  notice: "{prefix} §7The player §c{logger.sender} §7used the command §c{logger.command}§7!"
