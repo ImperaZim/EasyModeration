@@ -1,5 +1,5 @@
 # EasyModeration 
-
+![EASYMODERATION](https://media.discordapp.net/attachments/1048262380968226856/1048264557585506394/1669996025510.png) 
 A plugin to facilitate the moderation of your server that allows you to ban, unban, silence and unmute users and see the user command by users! 
 - - - -
 ## Compatibility 
