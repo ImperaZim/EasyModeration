@@ -1,0 +1,17 @@
+name: EasyModeration
+author: ImperaZim
+version: 1.0.0
+api: 4.0.0
+main: ImperaZim\EasyModeration\Loader
+
+permissions:
+ easymoderation.punish.command:
+  default: op
+ easymoderation.absolve.command:
+  default: op
+ easymoderation.mute.command:
+  default: op
+ easymoderation.unmute.command:
+  default: op
+ easymoderation.logger.usage:
+  default: op
