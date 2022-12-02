@@ -59,7 +59,7 @@ class MuteCommand extends Command implements PluginOwned {
  }
 
  public function getOwningPlugin() : Loader {
-  return Loader::getInstance();
+  return Loader::get();
  }
 
  public static function getServer() : Server {
