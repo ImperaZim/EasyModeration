@@ -18,25 +18,25 @@ class Mute extends Punishment {
  }
  
  public function getTime() : Int {
-  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . $this->content["player"] . "';");
+  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . SQLite3::table()->escapeString($this->content["player"]) . "';");
   $data = $query->fetchArray(SQLITE3_ASSOC);
   return $data['time'] ?? 0; 
  }
  
  public function getDate() : String {
-  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . $this->content["player"] . "';");
+  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . SQLite3::table()->escapeString($this->content["player"]) . "';");
   $data = $query->fetchArray(SQLITE3_ASSOC);
   return $data['date'] ?? ""; 
  }
  
  public function getAuthor() : String {
-  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . $this->content["player"] . "';");
+  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . SQLite3::table()->escapeString($this->content["player"]) . "';");
   $data = $query->fetchArray(SQLITE3_ASSOC);
   return $data['author'] ?? "anonymous"; 
  }
  
  public function getReason() : String {
-  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . $this->content["player"] . "';");
+  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . SQLite3::table()->escapeString($this->content["player"]) . "';");
   $data = $query->fetchArray(SQLITE3_ASSOC);
   return $data['reason'] ?? ""; 
  }
@@ -103,7 +103,7 @@ class Mute extends Punishment {
   if (!isset($this->content["player"])) $process = 1;
   if ($process == 0) {
    if ($this->isMuted($this->content["player"])) {
-    SQLite3::table()->query("DELETE FROM muted WHERE name='" . $this->content["player"] . "';");
+    SQLite3::table()->query("DELETE FROM muted WHERE name='" . SQLite3::table()->escapeString($this->content["player"]) . "';");
    }
   }
   return $process == 0;
