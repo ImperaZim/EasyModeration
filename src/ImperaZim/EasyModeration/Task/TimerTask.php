@@ -16,7 +16,7 @@ class TimerTask extends Task {
  }
   
  public function unregister() : void {
-  $this->shutdown();
+  $this->cancelAllTasks();
  }
 
  public function onRun() : void {
