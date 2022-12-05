@@ -30,7 +30,7 @@ class Loader extends PluginBase {
  }
 
  public function onDisable() : void {
-  TimerTask::unregister($this, new TimerTask());
+  (new TimerTask())->unregister();
  }
  
  public static function getFullTime(Int $time) {
