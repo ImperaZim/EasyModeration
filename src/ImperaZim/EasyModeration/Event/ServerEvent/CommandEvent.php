@@ -18,7 +18,7 @@ class CommandEvent implements Listener {
    if ($player->hasPermission("easymoderation.spy.usage")) {
     if (!isset(Loader::get()->spy[$player->getName()])) {
      $player->sendMessage(Loader::getProcessedTags(["{spy.sender}", "{spy.command}"], [$name, $command], Loader::get()->getConfig()->getNested("messages.spy.notice")));  
-     Server::getInstance()->getspy()->notice(Loader::getProcessedTags(["{spy.sender}", "{spy.command}"], [$name, $command], Loader::get()->getConfig()->getNested("messages.spy.notice")));  
+     Server::getInstance()->getLogger()->notice(Loader::getProcessedTags(["{spy.sender}", "{spy.command}"], [$name, $command], Loader::get()->getConfig()->getNested("messages.spy.notice")));  
     }
    }
   }
