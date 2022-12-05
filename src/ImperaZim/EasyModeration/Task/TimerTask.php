@@ -5,21 +5,27 @@ namespace ImperaZim\EasyModeration\Task;
 use pocketmine\Server;
 use pocketmine\scheduler\Task;
 use ImperaZim\EasyModeration\Loader;
+use pocketmine\scheduler\CancelTaskException; 
 use ImperaZim\EasyModeration\Functions\Punishment\Mute; 
 use ImperaZim\EasyModeration\Functions\DataBase\SQLite3; 
 use ImperaZim\EasyModeration\Functions\Punishment\Punishment; 
 
 class TimerTask extends Task {
+
+ public $state = 0;
  
  public static function register($loader, TimerTask $task) : void {
   $loader->getScheduler()->scheduleRepeatingTask($task, 10);
  }
   
  public function unregister() : void {
-  $this->cancelAllTasks();
+  $this->state = 1;
  }
 
  public function onRun() : void {
+  if ($this->state != 0) {
+   throw new CancelTaskException();
+  } 
   $plugin = Loader::get();
   $server = Server::getInstance();
   
