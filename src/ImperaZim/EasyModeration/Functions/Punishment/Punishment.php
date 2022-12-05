@@ -37,13 +37,13 @@ class Punishment {
  }
  
  public function isMuted(String $player) : bool {
-  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . $player . "';");
+  $query = SQLite3::table()->query("SELECT * FROM muted WHERE name='" . SQLite3::table()->escapeString($player) . "';");
   $data = $query->fetchArray(SQLITE3_ASSOC);
   return isset($data['name']);
  }
  
  public function isBanned(String $player) : bool {
-  $query = SQLite3::table()->query("SELECT * FROM banned WHERE name='" . $player . "';");
+  $query = SQLite3::table()->query("SELECT * FROM banned WHERE name='" . SQLite3::table()->escapeString($player) . "';");
   $data = $query->fetchArray(SQLITE3_ASSOC);
   return isset($data['name']);
  }
