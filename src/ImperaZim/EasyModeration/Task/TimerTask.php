@@ -14,6 +14,10 @@ class TimerTask extends Task {
  public static function register($loader, TimerTask $task) : void {
   $loader->getScheduler()->scheduleRepeatingTask($task, 10);
  }
+  
+ public function unregister() : void {
+  $this->shutdown();
+ }
 
  public function onRun() : void {
   $plugin = Loader::get();
