@@ -28,6 +28,10 @@ class Loader extends PluginBase {
   Commands::registerAll();
   TimerTask::register($this, new TimerTask());
  }
+
+ public function onDisable() : void {
+  TimerTask::unregister($this, new TimerTask());
+ }
  
  public static function getFullTime(Int $time) {
   $secounds = $time;
