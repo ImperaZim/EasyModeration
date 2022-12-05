@@ -29,10 +29,8 @@ class TimerTask extends Task {
     $time = $mute->getTime();
     if ($time <= 0) {  
      if ($mute->absolve()) {
-      $message = explode(":", Loader::get()->getConfig()->getNested("messages.muted.absolve.notice"));
-      if ($message[0] == "true") { 
-       $notice = Loader::getProcessedTags([], [], $message[1]);
-       $player->sendMessage($notice);
+
+
       }
      }
     } 
