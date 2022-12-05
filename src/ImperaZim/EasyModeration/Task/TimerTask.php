@@ -19,8 +19,7 @@ class TimerTask extends Task {
   $plugin = Loader::get();
   $server = Server::getInstance();
   
-  SQLite3::table()->query("UPDATE muted SET time=time-1 WHERE time > 0");
-  SQLite3::table()->query("UPDATE banned SET time=time-1 WHERE time > 0");
+  $this->refresh();
   
   foreach ($server->getOnlinePlayers() as $player) {
    $punish = new Punishment(); 
@@ -39,6 +38,11 @@ class TimerTask extends Task {
     } 
    }
   }
+ }
+
+ public function refresh() : void {
+  SQLite3::table()->query("UPDATE muted SET time=time-1 WHERE time > 0");
+  SQLite3::table()->query("UPDATE banned SET time=time-1 WHERE time > 0");
  }
  
 }
