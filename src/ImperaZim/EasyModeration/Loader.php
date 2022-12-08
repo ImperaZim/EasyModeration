@@ -6,7 +6,6 @@ use pocketmine\plugin\PluginBase;
 use ImperaZim\EasyModeration\Event\Events;
 use ImperaZim\EasyModeration\Task\TimerTask;
 use ImperaZim\EasyModeration\Command\Commands;
-use ImperaZim\EasyModeration\Functions\DataBase\SQLite3;
 
 class Loader extends PluginBase {
  
@@ -24,13 +23,11 @@ class Loader extends PluginBase {
  
  public function onEnable() : void {
   Events::registerAll();
-  SQLite3::createTable();
   Commands::registerAll();
   TimerTask::register($this, new TimerTask());
- }
-
- public function onDisable() : void {
-  (new TimerTask())->unregister();
+  $data = new \SQLite3($this->getDataFolder() . "database.db");
+  $data->query("CREATE TABLE IF NOT EXISTS muted(name TEXT, time INT, reason TEXT, date TEXT, author TEXT)");
+  $data->query("CREATE TABLE IF NOT EXISTS banned(name TEXT, time INT, reason TEXT, date TEXT, author TEXT)"); 
  }
  
  public static function getFullTime(Int $time) {
