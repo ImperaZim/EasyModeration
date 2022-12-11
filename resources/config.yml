@@ -25,4 +25,8 @@ messages:
    to-sender: "{prefix} §7The player §c{absolve.player} §7has been successfully unbanned!"
    no-banned: "{prefix} §7The player §c{absolve.player} §7is not banned!"
  spy:
+  disabled: "{prefix} §7Spy mode disabled!"
+  activated: "{prefix} §7Spy mode activated!"
+  has-disabled: "{prefix} §7Spy mode is already disabled!"
+  has-activated: "{prefix} §7Spy mode is already activated!"
   notice: "{prefix} §7The player §c{spy.sender} §7used the command §c{spy.command}§7!"
