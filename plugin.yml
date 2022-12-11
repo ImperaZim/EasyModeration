@@ -13,5 +13,5 @@ permissions:
   default: op
  easymoderation.unmute.command:
   default: op
- easymoderation.logger.usage:
+ easymoderation.spy.usage:
   default: op
