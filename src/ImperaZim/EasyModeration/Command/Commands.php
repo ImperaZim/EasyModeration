@@ -3,6 +3,7 @@
 namespace ImperaZim\EasyModeration\Command;
 
 use pocketmine\Server;
+use ImperaZim\EasyModeration\Command\Spy\SpyCommand;
 use ImperaZim\EasyModeration\Command\Mute\MuteCommand;
 use ImperaZim\EasyModeration\Command\Mute\UnmuteCommand;
 use ImperaZim\EasyModeration\Command\Punish\PunishCommand;
@@ -12,6 +13,7 @@ class Commands extends Server {
  
  public static function registerAll() : void {
    $commands = [
+    "Spy" => new SpyCommand(), 
     "Mute" => new MuteCommand(), 
     "Unmute" => new UnmuteCommand(), 
     "Punish" => new PunishCommand(), 
