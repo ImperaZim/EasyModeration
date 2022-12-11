@@ -35,7 +35,7 @@ class SpyCommand extends Command implements PluginOwned {
    }
    return true;
   }
-  if (in_array(strtolower($args[0], ["on", "ativar", "enable"]))) {
+  if (in_array(strtolower($args[0]), ["on", "ativar", "enable"])) {
    if (!$hasEnable) {
     Loader::get()->spy[$player->getName()] = $player->getName();
     $player->sendMessage(Loader::getProcessedTags([], [], Loader::get()->getConfig()->getNested("messages.spy.activated")));
@@ -44,7 +44,7 @@ class SpyCommand extends Command implements PluginOwned {
    $player->sendMessage(Loader::getProcessedTags([], [], Loader::get()->getConfig()->getNested("messages.spy.has-activated")));
    return true;
   }
-  if (in_array(strtolower($args[0], ["off", "desativar", "disable"]))) {
+  if (in_array(strtolower($args[0]), ["off", "desativar", "disable"])) {
    if ($hasEnable) {
     unset(Loader::get()->spy[$player->getName()]);
     $player->sendMessage(Loader::getProcessedTags([], [], Loader::get()->getConfig()->getNested("messages.spy.disabled"))); 
