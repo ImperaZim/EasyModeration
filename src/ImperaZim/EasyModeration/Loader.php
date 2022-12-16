@@ -17,11 +17,13 @@ class Loader extends PluginBase {
   return self::$instance;
  }
 
- public function onLoad() : void {
-  self::$instance = $this; 
- } 
- 
  public function onEnable() : void {
+  self::$instance = $this; 
+  $this->loadAll();
+ }
+ 
+ public function loadAll() : void {
+  self::$instance = $this; 
   Events::registerAll();
   Commands::registerAll();
   TimerTask::register($this, new TimerTask());
