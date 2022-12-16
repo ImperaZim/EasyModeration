@@ -23,7 +23,6 @@ class Loader extends PluginBase {
  }
  
  public function loadAll() : void {
-  self::$instance = $this; 
   Events::registerAll();
   Commands::registerAll();
   TimerTask::register($this, new TimerTask());
